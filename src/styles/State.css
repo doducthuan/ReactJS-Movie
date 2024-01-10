@@ -1,0 +1,49 @@
+.toggle{
+    width: 100px;
+    height: 50px;
+    background-color: #ccc;
+    border-radius: 100rem;
+    padding: 5px;
+    margin: 20px;
+    cursor: pointer;
+    transition:all 0.3s linear;
+}
+.toggle.active{
+    background-color: aqua;
+}
+.spinner{
+    width: 40px;
+    height: 40px;
+    border-radius: 100rem;
+    background-color: #fff;
+    transition: all 0.3s linear;
+}
+.spinner.active{
+    transform: translateX(50px);
+}
+.stale-state{
+    margin : 25px;
+    width: 100px;
+    height: 35px;
+    border-radius: 5px;
+}
+.choose{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    margin: 30px;
+}
+.information{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+.avatar{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50px;
+    height: 50px;
+    border-radius: 100rem;
+}

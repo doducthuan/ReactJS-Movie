@@ -1,0 +1,26 @@
+.form-sign{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin: 30px;
+}
+.input{
+    width: 250px;
+    height: 40px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 10px;
+}
+.submit{
+    width: 80px;
+    height: 40px;
+    border-radius: 8px;
+    background-color: rgb(111, 111, 189);
+    font-size: 18px;
+}
+.remember{
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+}
