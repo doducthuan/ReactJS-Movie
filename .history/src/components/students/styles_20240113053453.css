@@ -1,0 +1,12 @@
+.full-view{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #ccc;
+}
+.border-data{
+    width: 500px;
+    height: 500px;
+    background-color: red;
+}

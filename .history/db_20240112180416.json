@@ -1,0 +1,65 @@
+{
+  "account": [
+    {
+      "id": 1,
+      "userName": "hubertdo",
+      "password": "1234",
+      "fullName": "Hubert Do",
+      "roleId": 1
+    },
+    {
+      "userName": "alex",
+      "password": "123456",
+      "fullName": "Aris",
+      "roleId": 1,
+      "id": 2
+    },
+    {
+      "userName": "admin",
+      "password": "admin",
+      "fullName": "Aris",
+      "roleId": 1,
+      "id": 3
+    }
+  ],
+  "role": [
+    {
+      "id": 1,
+      "name": "Admin"
+    },
+    {
+      "id": 2,
+      "name": "Khách"
+    }
+  ],
+  "product": [
+    {
+      "id": 1,
+      "title": "Tom & Jerry",
+      "image": "",
+      "description": "",
+      "likes": 20
+    },
+    {
+      "id": 2,
+      "title": "Tom & Jerry",
+      "image": "",
+      "description": "",
+      "likes": 30
+    },
+    {
+      "id": 3,
+      "title": "Tom & Jerry",
+      "image": "",
+      "description": "",
+      "likes": 40
+    },
+    {
+      "id": 4,
+      "title": "Tom & Jerry",
+      "image": "",
+      "description": "",
+      "likes": 50
+    }
+  ]
+}

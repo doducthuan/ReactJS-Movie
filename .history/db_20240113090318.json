@@ -1,0 +1,35 @@
+{
+  "account": [
+    {
+      "id": 1,
+      "userName": "hubertdo",
+      "password": "1234",
+      "fullName": "Hubert Do",
+      "roleId": 1
+    },
+    {
+      "userName": "alex",
+      "password": "123456",
+      "fullName": "Aris",
+      "roleId": 1,
+      "id": 2
+    },
+    {
+      "userName": "admin",
+      "password": "admin",
+      "fullName": "Aris",
+      "roleId": 1,
+      "id": 3
+    }
+  ],
+  "students": [
+    { id: 20176884, name: "Hubert Do", math: 10, literature: 8, english: 10 },
+        { id: 20176884, name: "Hubert Do", math: 10, literature: 8, english: 10 },
+        { id: 20176884, name: "Hubert Do", math: 10, literature: 8, english: 10 },
+        { id: 20176884, name: "Hubert Do", math: 10, literature: 8, english: 10 },
+        { id: 20176884, name: "Hubert Do", math: 10, literature: 8, english: 10 },
+        { id: 20176884, name: "Hubert Do", math: 10, literature: 8, english: 10 },
+        { id: 20176884, name: "Hubert Do", math: 10, literature: 8, english: 10 },
+        { id: 20176884, name: "Hubert Do", math: 10, literature: 8, english: 10 },
+  ]
+}

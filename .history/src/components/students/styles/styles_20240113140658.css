@@ -1,0 +1,39 @@
+.full-view{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    /* background-color: #ccc; */
+}
+.border-data{
+    width: 1000px;
+    height: 700px;
+    background-color: #fff;
+    border-radius: 10px;
+}
+.table-data{
+    width: 95%;
+    height: 600px;
+    margin-left: 20px;
+}
+.search-add{
+    gap: 550px;
+    margin-bottom: 30px;
+}
+.search-all{
+    width: 250px;
+    height: 40px;
+    border: 1px solid #969292;
+    border-radius: 10px;
+    padding: 8px;
+}
+.add-student{
+    width: 150px;
+    height: 40px;
+    border-radius: 10px;
+}
+
+/* modal */
+.active-modal {
+    background-color: #ccc;
+}

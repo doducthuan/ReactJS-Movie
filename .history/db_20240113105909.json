@@ -1,0 +1,35 @@
+{
+  "account": [
+    {
+      "id": 1,
+      "userName": "hubertdo",
+      "password": "1234",
+      "fullName": "Hubert Do",
+      "roleId": 1
+    },
+    {
+      "userName": "alex",
+      "password": "123456",
+      "fullName": "Aris",
+      "roleId": 1,
+      "id": 2
+    },
+    {
+      "userName": "admin",
+      "password": "admin",
+      "fullName": "Aris",
+      "roleId": 1,
+      "id": 3
+    }
+  ],
+  "students": [
+    { "id": 20166884, "name": "Nguyễn Văn Nam", "math": 10, "literature": 8, "english": 9 },
+    { "id": 20166885, "name": "Bùi Thị Tuyết", "math": 7, "literature": 9, "english": 10 },
+    { "id": 20166886, "name": "Phạm Văn Ba", "math": 5, "literature": 10, "english": 10 },
+    { "id": 20166887, "name": "Lâm Khải Bằng", "math": 10, "literature": 4, "english": 10 },
+    { "id": 20166888, "name": "Chu Tiểu An", "math": 6, "literature": 8, "english": 8 },
+    { "id": 20166889, "name": "Phạm Bá Cương", "math": 10, "literature": 8, "english": 10 },
+    { "id": 20166870, "name": "Chu Tất Đạt", "math": 8, "literature": 8, "english": 9 },
+    { "id": 20166871, "name": "Lâm Tiểu Hi", "math": 10, "literature": 8, "english": 10 }
+  ]
+}

@@ -1,0 +1,27 @@
+.full-view{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #ccc;
+}
+.border-data{
+    width: 1000px;
+    height: 700px;
+    background-color: #fff;
+    border-radius: 10px;
+}
+.search-add{
+    height: 200px;
+    gap: 600px;
+    background-color: aquamarine;
+}
+.search-all{
+    width: 150px;
+    height: 40px;
+    border-radius: 10px;
+    padding: 8px;
+}
+.add-student{
+
+}

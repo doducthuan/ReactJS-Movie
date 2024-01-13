@@ -1,5 +1,5 @@
 import React from 'react';
-import './styles.css';
+//import './styles.css';
 const AdminLayout = (props) => {
     return (
         <div className="movie">
@@ -15,8 +15,13 @@ const AdminLayout = (props) => {
                 <div className="temp-movie-left"></div>
                 <div className="movie-right-small">
                     <div className="header">
+                    <div className="info-info-info">
+                        <img src="../../../avatar_rmbg.png" alt="avatar" className="info-avatar"></img>
+                        <p>Hubert Do</p>
+                    </div>
                     </div>
                     <div className="content-aside">
+                    <p className="">Hello vvvvvv</p>
                         {props.children}
                     </div>
                 </div>
