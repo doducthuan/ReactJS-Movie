@@ -4,6 +4,7 @@
  - Dữ liệu được hiển thị trên bảng . Pagination phân trang.
 
 2 . How to run ?
+
  Step 1: Open project.
  Step 2: node server.js   ( bước này giúp khởi động chạy database của JSON server ).
  Step 3: npm start ( chạy project ).
