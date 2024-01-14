@@ -8,7 +8,7 @@ import { FaRegEdit } from "react-icons/fa";
 import { MdDeleteOutline } from "react-icons/md";
 import Swal from 'sweetalert2';
 //import useFormInput from '../use_hook/UseFormInput.js';
-const Students = () => {
+const StudentV2 = () => {
     const initForm = {id: "", name: "", math:"", literature:"", english: ""};
     const [page, setPage] = useState(1);
     const [data, setData] = useState([]);
@@ -21,6 +21,7 @@ const Students = () => {
     const englishRef = useRef();
     const [count, setCount] = useState();
     const [reGen, setReGen] = useState(0);
+    const [valueSearchAll, setValueSearchAll] = useState("");
     const getDetail = async (id) => {
         try {
             const response = await axios.get(`http://localhost:3003/students/${id}`);
@@ -55,15 +56,15 @@ const Students = () => {
             console.log(error);
         }
     }
-    // const searchAllData = async (value) => {
-    //     try {
-    //         const update = await axios.get(`http://localhost:3003/students?q=${value}`);
-    //         return update.data;
-    //     }
-    //     catch (error) {
-    //         console.log(error);
-    //     }
-    // }
+    const searchAllData = async (value) => {
+        try {
+            const update = await axios.get(`http://localhost:3003/students?q=${value}`);
+            return update.data;
+        }
+        catch (error) {
+            console.log(error);
+        }
+    }
     const getTotalData = async () => {
         try {
             const response = await axios.get(GETALL);
@@ -93,11 +94,25 @@ const Students = () => {
     }
     useEffect(() => {
         async function handData() {
-            const full_data = await getPagingData(page);
-            setData(full_data);
+            if(valueSearchAll === ""){
+                const full_data = await getPagingData(page);
+                setData(full_data);
+            }
+            else{
+                const data_search_all = await searchAllData(valueSearchAll);
+                if(data_search_all.length > 0){
+                    setCount(data_search_all.length);
+                    let startIndex = (page - 1) * 4;
+                    let endIndex = (page - 1) * 4 + 4 > data_search_all.length ? data_search_all.length : (page - 1)*4 + 4;
+                    setData(data_search_all.slice(startIndex, endIndex));
+                    console.log(data);
+                }
+                
+            }
+            
         }
         handData();
-    }, [page, reGen, count]);
+    }, [page, reGen, count, valueSearchAll]);
     useEffect(() => {
         async function totalData() {
             const count_data = await getTotalData();
@@ -117,6 +132,9 @@ const Students = () => {
             }
             get_detail();
         }
+        else{
+            setInputValue(initForm);
+        }   
         setShowModal(!showModal);
     }
     const closeItem = () => {
@@ -232,20 +250,17 @@ const Students = () => {
             }
         });
     }
-    // const searchAll = (e) => {
-    //     if(e.keyCode === 13){
-    //         async function search_all(){
-    //             const data_search = await searchAllData(e.target.value);
-    //             setData(data_search);
-    //             if(data_search.length > 0){
-    //                 setCount(data_search.length);
-    //                 setPage(1);
-    //             }
-    //             //setCount(data_search.length);
-    //         }
-    //         search_all();
-    //     }
-    // }
+    const searchAll = (e) => {
+        if(e.keyCode === 13){
+            async function search_all(){
+                //const data_search = await searchAllData(e.target.value);
+                setValueSearchAll(e.target.value);
+                setPage(1);
+                console.log(e.target.value);
+            }
+            search_all();
+        }
+    }
     return (
         <div>
             <div className="full-view">
@@ -253,7 +268,7 @@ const Students = () => {
                     <p className="font-sans text-2xl ml-3 mt-3">Bảng điểm lớp 12A1</p>
                     <div className="table-data">
                         <div className="search-add mt-9 flex">
-                            {/* <input className="search-all text-lg" placeholder='Tìm kiếm ...' onKeyDown={(e) => searchAll(e)}/> */}
+                            <input className="search-all text-lg" placeholder='Tìm kiếm ...' onKeyDown={(e) => searchAll(e)}/>
                             <button className="add-student font-sans text-lg bg-cyan-500 hover:bg-cyan-600 text-white" onClick={() => editItem(0)}>Thêm mới</button>
                         </div>
                         <div>
@@ -386,4 +401,4 @@ const Students = () => {
     );
 };
 
-export default Students;
+export default StudentV2;

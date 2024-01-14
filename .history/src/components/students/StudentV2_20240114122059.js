@@ -8,7 +8,7 @@ import { FaRegEdit } from "react-icons/fa";
 import { MdDeleteOutline } from "react-icons/md";
 import Swal from 'sweetalert2';
 //import useFormInput from '../use_hook/UseFormInput.js';
-const Students = () => {
+const StudentV2 = () => {
     const initForm = {id: "", name: "", math:"", literature:"", english: ""};
     const [page, setPage] = useState(1);
     const [data, setData] = useState([]);
@@ -386,4 +386,4 @@ const Students = () => {
     );
 };
 
-export default Students;
+export default StudentV2;

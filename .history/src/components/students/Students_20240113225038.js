@@ -55,15 +55,15 @@ const Students = () => {
             console.log(error);
         }
     }
-    // const searchAllData = async (value) => {
-    //     try {
-    //         const update = await axios.get(`http://localhost:3003/students?q=${value}`);
-    //         return update.data;
-    //     }
-    //     catch (error) {
-    //         console.log(error);
-    //     }
-    // }
+    const searchAllData = async (value) => {
+        try {
+            const update = await axios.get(`http://localhost:3003/students?q=${value}`);
+            return update.data;
+        }
+        catch (error) {
+            console.log(error);
+        }
+    }
     const getTotalData = async () => {
         try {
             const response = await axios.get(GETALL);
@@ -232,20 +232,15 @@ const Students = () => {
             }
         });
     }
-    // const searchAll = (e) => {
-    //     if(e.keyCode === 13){
-    //         async function search_all(){
-    //             const data_search = await searchAllData(e.target.value);
-    //             setData(data_search);
-    //             if(data_search.length > 0){
-    //                 setCount(data_search.length);
-    //                 setPage(1);
-    //             }
-    //             //setCount(data_search.length);
-    //         }
-    //         search_all();
-    //     }
-    // }
+    const searchAll = (e) => {
+        if(e.keyCode === 13){
+            async function search_all(){
+                const b = await searchAllData(e.target.value);
+                console.log(b);
+            }
+            search_all();
+        }
+    }
     return (
         <div>
             <div className="full-view">
@@ -253,7 +248,7 @@ const Students = () => {
                     <p className="font-sans text-2xl ml-3 mt-3">Bảng điểm lớp 12A1</p>
                     <div className="table-data">
                         <div className="search-add mt-9 flex">
-                            {/* <input className="search-all text-lg" placeholder='Tìm kiếm ...' onKeyDown={(e) => searchAll(e)}/> */}
+                            <input className="search-all text-lg" placeholder='Tìm kiếm ...' onChange={(e) => searchAll(e)}/>
                             <button className="add-student font-sans text-lg bg-cyan-500 hover:bg-cyan-600 text-white" onClick={() => editItem(0)}>Thêm mới</button>
                         </div>
                         <div>

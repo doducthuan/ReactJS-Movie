@@ -55,15 +55,15 @@ const Students = () => {
             console.log(error);
         }
     }
-    // const searchAllData = async (value) => {
-    //     try {
-    //         const update = await axios.get(`http://localhost:3003/students?q=${value}`);
-    //         return update.data;
-    //     }
-    //     catch (error) {
-    //         console.log(error);
-    //     }
-    // }
+    const searchAllData = async (value) => {
+        try {
+            const update = await axios.get(`http://localhost:3003/students?q=${value}`);
+            return update.data;
+        }
+        catch (error) {
+            console.log(error);
+        }
+    }
     const getTotalData = async () => {
         try {
             const response = await axios.get(GETALL);
