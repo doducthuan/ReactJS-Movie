@@ -97,8 +97,8 @@ const StudentV2 = () => {
             if(valueSearchAll === ""){
                 const full_data = await getPagingData(page);
                 setData(full_data);
-                let countData = await getTotalData();
-                setCount(countData);
+                setCount(full_data.length);
+                setPage(1);
             }
             else{
                 const data_search_all = await searchAllData(valueSearchAll);
@@ -207,7 +207,7 @@ const StudentV2 = () => {
     const updateItem = (student) => {
         Swal.fire({
             title: inputValue.id > 0 ? "Cập nhật thông tin" : "Tạo mới",
-            text: inputValue.id > 0 ? "Cập nhật thông tin học sinh " + inputValue.name : "Tạo mới học sinh " + student.name,
+            text: inputValue.id > 0 ? "Cập nhật thông tin học sinh" + inputValue.name : "Tạo mới học sinh " + student.name,
             icon: "question",
             showCancelButton: true,
             confirmButtonText: inputValue.id > 0 ? "Cập nhật" : "Tạo",
