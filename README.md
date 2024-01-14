@@ -9,6 +9,7 @@
  - Step 2: node server.js   ( bước này giúp khởi động chạy database của JSON server ).
  - Step 3: npm start ( chạy project ).
 
-3 . Lời nhắn
+3 . Lời nhắn:
+
  Nếu bạn muốn đóng góp ý kiến hoặc muốn trao đổi với tôi. Vui lòng gửi thư đến địa chỉ : doducthuan29@gmail.com.
-Thank you ! Have a good day.
+ Thank you ! Have a good day.
