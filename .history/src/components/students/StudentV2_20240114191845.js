@@ -23,7 +23,6 @@ const StudentV2 = () => {
     const [reGen, setReGen] = useState(0);
     const [valueSearchAll, setValueSearchAll] = useState("");
     const [sort, setSort] = useState("name");
-    const [order, setOrder] = useState("desc");
     const getDetail = async (id) => {
         try {
             const response = await axios.get(`http://localhost:3003/students/${id}`);
@@ -58,9 +57,9 @@ const StudentV2 = () => {
             console.log(error);
         }
     }
-    const searchAllData = async (value, sort, order) => {
+    const searchAllData = async (value) => {
         try {
-            const update = await axios.get(`http://localhost:3003/students?_sort=${sort}&_order=${order}&q=${value}`);
+            const update = await axios.get(`http://localhost:3003/students?q=${value}`);
             return update.data;
         }
         catch (error) {
@@ -85,9 +84,9 @@ const StudentV2 = () => {
             console.log(error);
         }
     }
-    const getPagingData = async (page, sort,order) => {
+    const getPagingData = async (page) => {
         try {
-            const response = await axios.get(`http://localhost:3003/students?_sort=${sort}&_order=${order}&_page=${page}&_limit=4`);
+            const response = await axios.get(`http://localhost:3003/students?_page=${page}&_limit=4`);
             return response.data;
         }
         catch (error) {
@@ -97,13 +96,13 @@ const StudentV2 = () => {
     useEffect(() => {
         async function handData() {
             if(valueSearchAll === ""){
-                const full_data = await getPagingData(page, sort, order);
+                const full_data = await getPagingData(page);
                 setData(full_data);
                 let countData = await getTotalData();
                 setCount(countData);
             }
             else{
-                const data_search_all = await searchAllData(valueSearchAll, sort, order);
+                const data_search_all = await searchAllData(valueSearchAll);
                 if(data_search_all.length > 0){
                     setCount(data_search_all.length);
                     let startIndex = (page - 1) * 4;
@@ -119,7 +118,7 @@ const StudentV2 = () => {
             
         }
         handData();
-    }, [page, reGen, count, valueSearchAll, sort, order]);
+    }, [page, reGen, count, valueSearchAll]);
     useEffect(() => {
         async function totalData() {
             const count_data = await getTotalData();
@@ -268,7 +267,6 @@ const StudentV2 = () => {
             search_all();
         }
     }
-    console.log("check lop" + (count + 1));
     return (
         <div>
             <div className="full-view">
@@ -284,11 +282,11 @@ const StudentV2 = () => {
                                 <thead>
                                     <tr>
                                         <th>STT</th>
-                                        <th className='cursor-pointer' onClick={() => {setSort("id"); setOrder(order === "desc" ? "asc" : "desc")}}>MSSV</th>
-                                        <th className="cursor-pointer" onClick={() => {setSort("name"); setOrder(order === "desc" ? "asc" : "desc")}}>Họ và tên</th>
-                                        <th className="cursor-pointer" onClick={() => {setSort("math"); setOrder(order === "desc" ? "asc" : "desc")}}>Toán</th>
-                                        <th className="cursor-pointer" onClick={() => {setSort("literature"); setOrder(order === "desc" ? "asc" : "desc")}}>Văn</th>
-                                        <th className="cursor-pointer" onClick={() => {setSort("english"); setOrder(order === "desc" ? "asc" : "desc")}}>Anh</th>
+                                        <th className='cursor-pointer'>MSSV</th>
+                                        <th>Họ và tên</th>
+                                        <th>Toán</th>
+                                        <th>Văn</th>
+                                        <th>Anh</th>
                                         <th>Thao tác</th>
                                     </tr>
                                 </thead>
