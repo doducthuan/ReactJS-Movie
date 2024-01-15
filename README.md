@@ -1,5 +1,5 @@
 1 . Giới thiệu:
- - Đây là 1 bài tập nhỏ sau 5 ngày học ReactJS cơ bản: gồm CRUD cơ bản và tính năng search all.
+ - Đây là 1 bài tập nhỏ sau 5 ngày học ReactJS cơ bản: gồm CRUD cơ bản và tính năng search all, sort.
  - Database và api được support bởi JSON server.
  - Dữ liệu được hiển thị trên bảng . Pagination phân trang.
 
